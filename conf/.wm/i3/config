@@ -1,0 +1,307 @@
+# i3 config file (v4)
+#
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+
+####################
+# Global Variables #
+###################
+# mod key
+set $mod Mod4
+
+#workspace names
+#Shell
+set $WS1 "1:1:"
+#Code
+set $WS2 "2:2:"
+#Web
+set $WS3 "3:3:"
+#Folder
+set $WS4 "4:4:"
+#VM
+set $WS5 "5:5:"
+#Mail
+set $WS6 "6:6:"
+#IRC
+set $WS7 "7:7:"
+#Multimedia
+set $WS8 "8:8:"
+#Game
+set $WS9 "9:9:"
+#Other
+set $WS10 "10:0:"
+
+# mode system
+set $mode_system Power Management (l)ock, l(o)gout, (s)hutdown, (r)eboot
+
+
+#########################
+# Autostart Application #
+#########################
+exec --no-startup-id feh --bg-scale ~/.wm/i3/wallpaper.jpg
+exec --no-startup-id volumeicon
+exec --no-startup-id nm-applet
+exec --no-startup-id fcitx
+#exec --no-startup-id urxvt
+
+#########################
+#      Window Style     #
+#########################
+# font
+font pango:Noto SansMono 11
+
+# colors
+# class			border	bg	text	indicator child_border
+client.focused		#000000 #99CC66	#FFFFFF	#000000	  #99CC66
+client.focused_inactive	#333333	#5F676A	#FFFFFF	#484E50	  #000000
+client.unfocused	#333333	#222222	#888888	#292D2E	  #000000
+client.urgent		#2F343A	#999999	#FFFFFF	#000000	  #000000
+client.placeholder	#000000	#0C0C0C	#FFFFFF	#000000	  #0C0C0C
+client.background	#FFFFFF
+
+# border
+for_window [class="^.*"] border pixel 1
+
+# focus
+focus_follows_mouse no
+workspace_auto_back_and_forth no
+
+# floating window size
+floating_minimum_size 600x450
+floating_maximum_size 800x600
+
+# workspace layout
+workspace_layout tabbed
+
+########################
+#         i3bar        #
+########################
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+	strip_workspace_numbers yes
+	tray_output primary
+	tray_padding 5
+	status_command conky -c ~/.wm/conky/conky.top.conf
+	position top
+	font pango:noto mono 13
+	binding_mode_indicator no
+	colors {
+		background #555555
+		statusline #FFFFFF
+		focused_workspace #333333 #000000 #FFFFFF
+		active_workspace #000000 #00000 #FFFFFF
+		inactive_workspace #333333 #555555 #FFFFFF
+	}
+}
+
+bar {
+	position bottom
+	tray_output none
+	tray_padding 5
+	workspace_buttons no
+	status_command conky -c ~/.wm/conky/conky.bottom.conf
+	font pango:noto mono 12
+	colors {
+		background #555555
+	}
+}
+
+########################
+#      Workspace       #
+########################
+# assign workspace to screents
+workspace $WS1 output VGA-1
+workspace $WS2 output VGA-1
+workspace $WS3 output VGA-1
+workspace $WS4 output VGA-1
+workspace $WS5 output VGA-1
+workspace $WS6 output VGA-1
+workspace $WS7 output VGA-1
+workspace $WS8 output VGA-1
+workspace $WS9 output VGA-1
+workspace $WS10 output VGA-1
+
+# assign window to workspace
+#assign [class="URxvt"] $WS1
+for_window [class="URxvt"] focus
+
+assign [class="Chromium"] $WS3
+for_window [class="Chromium"] focus
+assign [class="Firefox"] $WS3
+for_window [class="Firefox"] focus
+
+assign [class="Thunar"] $WS4
+for_window [class="Thunar"] focus
+assign [class="Foxit Reader"] $WS4
+for_window [class="Foxit Reader"] focus
+assign [class="Gpicview"] $WS4
+for_window [class="Gpicview"] floating enable
+
+assign [class="Virtualbox"] $WS5
+for_window [class="Virtualbox"] focus
+assign [class="Remmina"] $WS5
+for_window [class="Remmina"] focus
+assign [class="Wps"] $WS5
+for_window [class="Wps"] focus
+
+assign [class="Thunderbird"] $WS6
+for_window [class="Thunderbird"] focus
+
+assign [class="Weechat"] $WS7
+for_window [class="Weechat"] focus
+
+assign [class="Quodlibet"] $WS8
+for_window [class="Quodlibet"] focus
+assign [class="mpv"] $WS8
+for_window [class="mpv"] focus
+
+assign [class="Uget"] $WS9
+for_window [class="Uget"] focus
+
+#########################
+#    Applications Key   #
+#########################
+# start a terminal
+bindsym $mod+Return exec i3-sensible-terminal
+
+# start rofi menu
+bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+Tab exec --no-startup-id rofi -show window
+bindsym $mod+Shift+d exec --no-startup-id rofi -show run
+
+# rofi custom menu
+bindsym $mod+r exec ~/.wm/rofi/app.sh
+
+# start scrot
+bindsym Print exec scrot -e 'mv $f ~/Screenshots'
+bindsym --release $mod+Print exec scrot -s -e 'mv $f ~/Screenshots'
+
+# start file manager
+bindsym $mod+e exec thunar
+
+# power management
+mode "$mode_system" {
+	bindsym l exec slimlock, mode "default"
+	bindsym o exec i3-msg exit, mode "default"
+	bindsym s exec systemctl poweroff
+	bindsym r exec systemctl reboot
+	bindsym Escape mode "default"
+	bindsym Return mode "default"
+}
+bindsym $mod+p mode "$mode_system"
+
+#########################
+#      Key Binding      #
+#########################
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# kill focused window
+bindsym Mod1+F4 kill
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left move left
+bindsym $mod+Down move down
+bindsym $mod+Up move up
+bindsym $mod+Right move right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+q layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# switch to workspace
+bindsym $mod+1 workspace $WS1
+bindsym $mod+2 workspace $WS2
+bindsym $mod+3 workspace $WS3
+bindsym $mod+4 workspace $WS4
+bindsym $mod+5 workspace $WS5
+bindsym $mod+6 workspace $WS6
+bindsym $mod+7 workspace $WS7
+bindsym $mod+8 workspace $WS8
+bindsym $mod+9 workspace $WS9
+bindsym $mod+0 workspace $WS10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+i mode "resize"
