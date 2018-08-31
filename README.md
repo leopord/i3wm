@@ -2,7 +2,7 @@
 
 ## i3wm screenshot
 
-![alt tag](https://github.com/leopord/configs/blob/master/screenshots/screenshot.png)
+![alt tag](https://github.com/leopord/i3wm/blob/master/screenshots/screenshot.png)
 
 ## Install
 git clone https://github.com/leopord/i3-configs.git
