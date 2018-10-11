@@ -5,7 +5,7 @@
 ![alt tag](https://github.com/leopord/i3wm/blob/master/screenshots/screenshot.png)
 
 ## Install
-git clone https://github.com/leopord/i3-configs.git
+git clone https://github.com/leopord/i3wm.git
 
 Enter configs, run <b>./install.sh</b> to install i3wm, applications and configuration files.
 
