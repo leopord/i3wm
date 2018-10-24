@@ -5,7 +5,7 @@ git clone https://aur.archlinux.org/wps-office.git
 pushd wps-office
 makepkg -si
 popd
-unzip -o ./font/wps_symbol_fonts.zip -d /usr/share/fonts/wps-office/
+sudo unzip -o ./font/wps_symbol_fonts.zip -d /usr/share/fonts/wps-office/
 
 # PDF viewer
 git clone https://aur.archlinux.org/gstreamer0.10.git
