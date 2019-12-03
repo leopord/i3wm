@@ -13,8 +13,7 @@ pacman -S --noconfirm rxvt-unicode zsh rofi feh conky scrot alsa-utils volumeico
 pacman -S --noconfirm ttf-font-awesome wqy-zenhei wqy-microhei adobe-source-han-sans-cn-fonts adobe-source-han-sans-tw-fonts adobe-source-han-sans-jp-fonts
  
 # Network Manager
-pacman -S --noconfirm networkmanager network-manager-applet rp-pppoe dnsmasq
-
+pacman -S --noconfirm networkmanager network-manager-applet rp-pppoe
 # GRUB
 sed -i 's:#GRUB_BACKGROUND="/path/to/wallpaper":GRUB_BACKGROUND="/usr/share/archlinux/wallpaper/archlinux-simplyblack-43.png":' /etc/default/grub
 grub-mkconfig -o /boot/grub/grub.cfg
@@ -41,10 +40,7 @@ pacman -S --noconfirm gpicview gimp gcolor2 quodlibet mpv cheese
 # pacman -S --noconfirm nmap tcpdump wireshark-gtk
 
 # Documents and Text
-pacman -S --noconfirm gnote bookworm stardict
-
-# Link bookworm
-ln -sf /usr/bin/com.github.babluboy.bookworm /usr/bin/bookworm
+pacman -S --noconfirm gnote stardict
 
 # Extract dictionary file
 tar xvf ./dictionary/Longman_Dictionary_of_Contemporary_English-2.4.2.tar.bz2 -C /usr/share/stardict/dic/
