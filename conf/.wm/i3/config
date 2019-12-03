@@ -70,7 +70,7 @@ floating_minimum_size 600x450
 floating_maximum_size 800x600
 
 # workspace layout
-workspace_layout tabbed
+workspace_layout default
 
 ########################
 #         i3bar        #
