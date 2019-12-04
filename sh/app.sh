@@ -7,7 +7,7 @@ pacman -Syu --noconfirm
 pacman -S --noconfirm xorg-server xorg-xinit slim i3 archlinux-wallpaper archlinux-themes-slim
 
 # Basic Packages
-pacman -S --noconfirm rxvt-unicode zsh rofi feh conky scrot alsa-utils volumeicon fcitx fcitx-googlepinyin fcitx-configtool
+pacman -S --noconfirm rxvt-unicode zsh rofi feh conky scrot alsa-utils volumeicon fcitx fcitx-googlepinyin fcitx-configtool arandr
 
 # Fonts
 pacman -S --noconfirm ttf-font-awesome wqy-zenhei wqy-microhei adobe-source-han-sans-cn-fonts adobe-source-han-sans-tw-fonts adobe-source-han-sans-jp-fonts
