@@ -7,7 +7,9 @@
 ## Install
 git clone https://github.com/leopord/i3wm.git
 
-Enter configs, run <b>./install.sh</b> to install i3wm, applications and configuration files.
+_username_
+
+Enter configs, run #./install.sh# to install i3wm, applications and configuration files.
 
 ## Referrence
 Details in doc/archlinux-i3wm.pdf
