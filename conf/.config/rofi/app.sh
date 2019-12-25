@@ -5,7 +5,8 @@ writer="wps writer"
 sheet="wps spreadsheets"
 presentation="wps presentation"
 pdf="wps pdf"
-music="music player"
+music1="ncmpcpp music player"
+music2="netease cloud music player"
 dict="stardict(dictionary)"
 email="thunderbird(email reader)"
 image="drawing(image editor)"
@@ -16,7 +17,7 @@ monitor="monitor manager"
 power="power manager"
 process="process viewer"
 other="more rofi"
-action=$(echo -e "$web1\n$web2\n$music\n$writer\n$sheet\n$presentation\n$pdf\n$dict\n$email\n$image\n$remote\n$color\n$screen\n$monitor\n$power\n$process\n$other" | rofi -dmenu -p "run")
+action=$(echo -e "$web1\n$web2\n$music1\n$music2\n$writer\n$sheet\n$presentation\n$pdf\n$dict\n$email\n$image\n$remote\n$color\n$screen\n$monitor\n$power\n$process\n$other" | rofi -dmenu -p "run")
 
 if [[ "$action" == "$web1" ]]
 then 
@@ -28,9 +29,14 @@ then
 	chromium
 fi
 
-if [[ "$action" == "$music" ]]
+if [[ "$action" == "$music1" ]]
 then 
 	i3-sensible-terminal -e ncmpcpp
+fi
+
+if [[ "$action" == "$music2" ]]
+then 
+	netease-cloud-music
 fi
 
 if [[ "$action" == "$writer" ]]

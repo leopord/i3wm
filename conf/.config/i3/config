@@ -112,6 +112,8 @@ for_window [class="Thunderbird"] focus
 
 assign [class="mpv"] $WS7
 for_window [class="mpv"] focus
+assign [class="netease-cloud-music"] $WS7
+for_window [class="netease-cloud-music"] focus
 assign [class="Drawing"] $WS7
 for_window [class="Drawing"] focus
 assign [class="screengrab"] $WS7
