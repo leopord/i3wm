@@ -1,6 +1,7 @@
-.wm
 .Xresources
 .Xresources.d
-.xinitrc
-.bashrc
 .bash_profile
+.bashrc
+.config
+.xinitrc
+.zshrc

@@ -4,6 +4,12 @@
 
 ![alt tag](https://github.com/leopord/i3wm/blob/master/screenshots/screenshot.png)
 
+## User
+useradd -m -g users -G audio,video,floppy,network,rfkill,scanner,storage,optical,power,wheel,uucp -s /bin/bash _username_
+passwd _username_
+
+Enable sudo's wheel group.
+
 ## Install
 git clone https://github.com/leopord/i3wm.git
 

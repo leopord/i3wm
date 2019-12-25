@@ -40,4 +40,4 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 
-exec i3 -c ~/.wm/i3/config -V >> $HOME/.logs/i3/$(date '+%F.log') 2>&1
+exec i3 -c ~/.config/i3/config -V >> $HOME/.logs/i3/$(date '+%F.log') 2>&1
