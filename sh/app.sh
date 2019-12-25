@@ -7,7 +7,7 @@ pacman -Syu --noconfirm
 pacman -S --noconfirm zip unzip unrar unace p7zip hwinfo htop mlocate vim git arch-wiki-lite arch-wiki-docs
 
 # Window Manager
-pacman -S --noconfirm xorg-server xorg-xinit slim i3 archlinux-wallpaper archlinux-themes-slim rxvt-unicode rofi feh conky scrot alsa-utils volumeicon fcitx fcitx-googlepinyin fcitx-configtool arandr mate-power-manager
+pacman -S --noconfirm xorg-server xorg-xinit slim i3 zsh archlinux-wallpaper archlinux-themes-slim rxvt-unicode rofi feh conky scrot alsa-utils volumeicon fcitx fcitx-googlepinyin fcitx-configtool arandr mate-power-manager
 
 # Fonts
 pacman -S --noconfirm ttf-font-awesome wqy-zenhei wqy-microhei adobe-source-han-sans-cn-fonts adobe-source-han-sans-tw-fonts adobe-source-han-sans-jp-fonts
