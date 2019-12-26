@@ -28,7 +28,7 @@ pacman -S --noconfirm drawing gcolor2 mpd mpc ncmpcpp mpv screengrab
 pacman -S --noconfirm stardict texlive-most texlive-lang
 
 # GRUB
-sed -i 's:#GRUB_BACKGROUND="/path/to/wallpaper":GRUB_BACKGROUND="/usr/share/archlinux/wallpaper/archlinux-simplyblack-43.png":' /etc/default/grub
+sed -i 's:#GRUB_BACKGROUND="/path/to/wallpaper":GRUB_BACKGROUND="/usr/share/backgrounds/archlinux/archlinux-simplyblack.png":' /etc/default/grub
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # SLiM
