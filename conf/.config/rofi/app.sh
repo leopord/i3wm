@@ -1,6 +1,8 @@
 #!/bin/bash
 web1="firefox(web browser)"
 web2="chromium(web browser)"
+file="file manager"
+text="atom(text editor)"
 writer="wps writer"
 sheet="wps spreadsheets"
 presentation="wps presentation"
@@ -16,8 +18,10 @@ screen="screen capture"
 monitor="monitor manager"
 power="power manager"
 process="process viewer"
+windows="windows"
+virtual="virtualbox"
 other="more rofi"
-action=$(echo -e "$web1\n$web2\n$music1\n$music2\n$writer\n$sheet\n$presentation\n$pdf\n$dict\n$email\n$image\n$remote\n$color\n$screen\n$monitor\n$power\n$process\n$other" | rofi -dmenu -p "run")
+action=$(echo -e "$web1\n$web2\n$music1\n$music2\n$file\n$text\n$writer\n$sheet\n$presentation\n$pdf\n$windows\n$virtual\n$dict\n$email\n$image\n$remote\n$color\n$screen\n$monitor\n$power\n$process\n$other" | rofi -dmenu -p "run")
 
 if [[ "$action" == "$web1" ]]
 then 
@@ -39,6 +43,16 @@ then
 	netease-cloud-music
 fi
 
+if [[ "$action" == "$file" ]]
+then 
+	thunar
+fi
+
+if [[ "$action" == "$text" ]]
+then 
+	atom
+fi
+
 if [[ "$action" == "$writer" ]]
 then 
 	wps
@@ -57,6 +71,17 @@ fi
 if [[ "$action" == "$pdf" ]]
 then 
 	wpspdf
+fi
+
+if [[ "$action" == "$windows" ]]
+then 
+        /usr/lib/virtualbox/VirtualBoxVM --comment "Win7" --startvm "{6b7a84ed-f07d-4f64-b337-0c6fac930109}"
+
+fi
+
+if [[ "$action" == "$virtual" ]]
+then 
+	virtualbox
 fi
 
 if [[ "$action" == "$dict" ]]

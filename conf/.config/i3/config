@@ -88,6 +88,9 @@ set $WS10 "10:"
 #assign [class="URxvt"] $WS1
 for_window [class="URxvt"] focus
 
+assign [class="Atom"] $WS2
+for_window [class="Atom"] focus
+
 assign [class="Chromium"] $WS3
 for_window [class="Chromium"] focus
 assign [class="firefox"] $WS3
@@ -95,6 +98,8 @@ for_window [class="firefox"] focus
 
 assign [class="Stardict"] $WS4
 for_window [class="Stardict"] focus
+assign [class="Thunar"] $WS4
+for_window [class="Thunar"] focus
 
 assign [class="Remmina"] $WS5
 for_window [class="Remmina"] focus
@@ -106,6 +111,10 @@ assign [class="Wpp"] $WS5
 for_window [class="Wpp"] focus
 assign [class="Wpspdf"] $WS5
 for_window [class="Wpspdf"] focus
+assign [class="VirtualBox Manager"] $WS5
+for_window [class="VirtualBox Manager"] focus
+assign [class="VirtualBoxVM"] $WS5
+for_window [class="VirtualBoxVM"] focus
 
 assign [class="Thunderbird"] $WS6
 for_window [class="Thunderbird"] focus

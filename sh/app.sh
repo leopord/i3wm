@@ -11,12 +11,12 @@ pacman -S --noconfirm xorg-server xorg-xinit slim i3 zsh archlinux-wallpaper arc
 
 # Fonts
 pacman -S --noconfirm ttf-font-awesome wqy-zenhei wqy-microhei adobe-source-han-sans-cn-fonts adobe-source-han-sans-tw-fonts adobe-source-han-sans-jp-fonts
- 
+
 # Network Manager
 pacman -S --noconfirm networkmanager network-manager-applet rp-pppoe
 
 # File Manager
-pacman -S --noconfirm ranger w3m gvfs-afc usbmuxd gvfs-mtp
+pacman -S --noconfirm ranger w3m thunar gvfs-afc usbmuxd gvfs-mtp
 
 # Internet
 pacman -S --noconfirm chromium pepper-flash firefox firefox-i18n-zh-cn flashplugin wget thunderbird thunderbird-i18n-zh-cn remmina freerdp
@@ -25,10 +25,13 @@ pacman -S --noconfirm chromium pepper-flash firefox firefox-i18n-zh-cn flashplug
 pacman -S --noconfirm drawing gcolor2 mpd mpc ncmpcpp mpv screengrab
 
 # Documents and Text
-pacman -S --noconfirm stardict texlive-most texlive-lang
+pacman -S --noconfirm atom stardict texlive-most texlive-lang
+
+# Virtual Machine
+pacman -S virtualbox virtualbox-guest-iso
 
 # GRUB
-sed -i 's:#GRUB_BACKGROUND="/path/to/wallpaper":GRUB_BACKGROUND="/usr/share/archlinux/wallpaper/archlinux-simplyblack-43.png":' /etc/default/grub
+sed -i 's:#GRUB_BACKGROUND="/path/to/wallpaper":GRUB_BACKGROUND="/usr/share/backgrounds/archlinux/archlinux-simplyblack.png":' /etc/default/grub
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # SLiM
