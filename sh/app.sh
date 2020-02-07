@@ -16,7 +16,7 @@ pacman -S --noconfirm ttf-font-awesome wqy-zenhei wqy-microhei adobe-source-han-
 pacman -S --noconfirm networkmanager network-manager-applet rp-pppoe
 
 # File Manager
-pacman -S --noconfirm ranger w3m thunar gvfs-afc usbmuxd gvfs-mtp
+pacman -S --noconfirm ranger w3m thunar thunar-archive-plugin thunar-volman file-roller gvfs gvfs-afc gvfs-gphoto2 gvfs-mtp usbmuxd libimobiledevice
 
 # Internet
 pacman -S --noconfirm chromium pepper-flash firefox firefox-i18n-zh-cn flashplugin wget thunderbird thunderbird-i18n-zh-cn remmina freerdp
