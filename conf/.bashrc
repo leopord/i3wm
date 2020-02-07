@@ -11,3 +11,6 @@ PS1='[\u@\h \W]\$ '
 # Enable tab-completion
 complete -cf sudo
 complete -c man which
+
+# Export Software direcotry
+export PATH=$HOME/bin:/usr/local/bin:$PATH
