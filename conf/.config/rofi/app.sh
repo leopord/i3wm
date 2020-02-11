@@ -30,7 +30,7 @@ fi
 
 if [[ "$action" == "$web2" ]]
 then 
-	chromium
+	chromium --enable-easy-off-store-extension-install
 fi
 
 if [[ "$action" == "$music1" ]]
