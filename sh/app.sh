@@ -10,7 +10,7 @@ pacman -S --noconfirm zip unzip unrar unace p7zip hwinfo htop mlocate vim git ar
 pacman -S --noconfirm xorg-server xorg-xinit slim i3 zsh archlinux-wallpaper archlinux-themes-slim rxvt-unicode rofi feh conky scrot alsa-utils volumeicon arandr mate-power-manager
 
 # Input Method
-pacman -S fcitx fcitx-gtk3 fcitx-googlepinyin fcitx-configtool 
+pacman -S fcitx fcitx-gtk3 fcitx-configtool 
 
 # Fonts
 pacman -S --noconfirm ttf-font-awesome wqy-zenhei wqy-microhei adobe-source-han-sans-cn-fonts adobe-source-han-sans-tw-fonts adobe-source-han-sans-jp-fonts
