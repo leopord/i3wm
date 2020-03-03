@@ -4,13 +4,17 @@
 pacman -Syu --noconfirm
 
 # Basic Packages
-pacman -S --noconfirm zip unzip unrar unace p7zip hwinfo htop mlocate vim git arch-wiki-lite arch-wiki-docs
+pacman -S --noconfirm zip unzip unrar unace p7zip hwinfo htop arch-wiki-lite arch-wiki-docs
 
 # Window Manager
-pacman -S --noconfirm xorg-server xorg-xinit slim i3 zsh archlinux-wallpaper archlinux-themes-slim alacritty rofi feh scrot alsa-utils volumeicon arandr mate-power-manager
+pacman -S --noconfirm xorg-server xorg-xinit slim i3 zsh archlinux-wallpaper archlinux-themes-slim alacritty rofi feh scrot alsa-utils volumeicon arandr
+
+# Development
+pacman -S ctags fzf git xsel neovim python-pynvim nodejs the_silver_searcher bat fzf clang
+npm install -g neovim
 
 # Input Method
-pacman -S fcitx fcitx-gtk3 fcitx-configtool 
+pacman -S fcitx fcitx-gtk3 fcitx-configtool
 
 # Fonts
 pacman -S --noconfirm ttf-font-awesome wqy-zenhei wqy-microhei adobe-source-han-sans-cn-fonts adobe-source-han-sans-tw-fonts adobe-source-han-sans-jp-fonts
@@ -22,13 +26,13 @@ pacman -S --noconfirm networkmanager network-manager-applet rp-pppoe
 pacman -S --noconfirm ranger w3m thunar thunar-archive-plugin thunar-volman file-roller gvfs gvfs-afc gvfs-gphoto2 gvfs-mtp usbmuxd libimobiledevice
 
 # Internet
-pacman -S --noconfirm chromium pepper-flash firefox firefox-i18n-zh-cn flashplugin wget thunderbird thunderbird-i18n-zh-cn remmina freerdp
+pacman -S --noconfirm chromium pepper-flash firefox firefox-i18n-zh-cn flashplugin wget thunderbird thunderbird-i18n-zh-cn remmina freerdp you-get
 
 # Multimedia
 pacman -S --noconfirm drawing gcolor2 mpd mpc ncmpcpp mpv screengrab
 
 # Documents and Text
-pacman -S --noconfirm atom stardict texlive-most texlive-lang
+pacman -S --noconfirm stardict texlive-most texlive-lang
 
 # Virtual Machine
 pacman -S virtualbox virtualbox-guest-iso

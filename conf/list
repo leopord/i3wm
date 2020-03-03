@@ -1,5 +1,6 @@
 .Xresources
 .Xresources.d
+.Xmodmap
 .bash_profile
 .bashrc
 .config

@@ -2,7 +2,8 @@
 web1="firefox(web browser)"
 web2="chromium(web browser)"
 file="file manager"
-text="atom(text editor)"
+text="nvim(text editor)"
+download="xdman(downloader)"
 writer="wps writer"
 sheet="wps spreadsheets"
 presentation="wps presentation"
@@ -16,125 +17,123 @@ remote="remmina(remote desktop)"
 color="gcolor2(color picker)"
 screen="screen capture"
 monitor="monitor manager"
-power="power manager"
 process="process viewer"
 windows="windows"
 virtual="virtualbox"
 other="more rofi"
-action=$(echo -e "$web1\n$web2\n$music1\n$music2\n$file\n$text\n$writer\n$sheet\n$presentation\n$pdf\n$windows\n$virtual\n$dict\n$email\n$image\n$remote\n$color\n$screen\n$monitor\n$power\n$process\n$other" | rofi -dmenu -p "run")
+action=$(echo "$web1|$web2|$music1|$music2|$file|$text|$download|$writer|$sheet|$presentation|$pdf|$windows|$virtual|$dict|$email|$image|$remote|$color|$screen|$monitor|$process|$other" | rofi -sep "|" -dmenu -p "run")
 
 if [[ "$action" == "$web1" ]]
-then 
-	firefox
+then
+  firefox
 fi
 
 if [[ "$action" == "$web2" ]]
-then 
-	chromium --enable-easy-off-store-extension-install
+then
+  chromium --enable-easy-off-store-extension-install
 fi
 
 if [[ "$action" == "$music1" ]]
-then 
-	i3-sensible-terminal -e ncmpcpp
+then
+  i3-sensible-terminal -e ncmpcpp
 fi
 
 if [[ "$action" == "$music2" ]]
-then 
-	netease-cloud-music
+then
+  netease-cloud-music
 fi
 
 if [[ "$action" == "$file" ]]
-then 
-	thunar
+then
+  thunar
 fi
 
 if [[ "$action" == "$text" ]]
-then 
-	atom
+then
+  i3-sensible-terminal -e nvim
+fi
+
+if [[ "$action" == "$downloader" ]]
+then
+  xdman
 fi
 
 if [[ "$action" == "$writer" ]]
-then 
-	wps
+then
+  wps
 fi
 
 if [[ "$action" == "$sheet" ]]
-then 
-	et
+then
+  et
 fi
 
 if [[ "$action" == "$presentation" ]]
-then 
-	wpp
+then
+  wpp
 fi
 
 if [[ "$action" == "$pdf" ]]
-then 
-	wpspdf
+then
+  wpspdf
 fi
 
 if [[ "$action" == "$windows" ]]
-then 
-        /usr/lib/virtualbox/VirtualBoxVM --comment "Win7" --startvm "{6b7a84ed-f07d-4f64-b337-0c6fac930109}"
-
+then
+  /usr/lib/virtualbox/VirtualBoxVM --comment "Win7" --startvm "{6b7a84ed-f07d-4f64-b337-0c6fac930109}"
 fi
 
 if [[ "$action" == "$virtual" ]]
-then 
-	virtualbox
+then
+  virtualbox
 fi
 
 if [[ "$action" == "$dict" ]]
-then 
-	stardict
+then
+  stardict
 fi
 
 if [[ "$action" == "$email" ]]
-then 
-	thunderbird
+then
+  thunderbird
 fi
 
 if [[ "$action" == "$image" ]]
-then 
-	drawing
+then
+  drawing
 fi
 
 if [[ "$action" == "$remote" ]]
-then 
-	remmina
+then
+  remmina
 fi
 
 if [[ "$action" == "$vm" ]]
-then 
-	virtualbox
+then
+  virtualbox
 fi
 
 if [[ "$action" == "$color" ]]
-then 
-	gcolor2
+then
+  gcolor2
 fi
 
 if [[ "$action" == "$screen" ]]
-then 
-	screengrab
+then
+  screengrab
 fi
 
 if [[ "$action" == "$process" ]]
-then 
-	i3-sensible-terminal -e htop
+then
+  i3-sensible-terminal -e htop
 fi
 
 if [[ "$action" == "$monitor" ]]
-then 
-	arandr
-fi
-
-if [[ "$action" == "$power" ]]
-then 
-	mate-power-preferences
+then
+  arandr
 fi
 
 if [[ "$action" == "$other" ]]
-then 
-	rofi -show drun
+then
+  rofi -show drun
 fi

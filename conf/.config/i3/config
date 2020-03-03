@@ -136,7 +136,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 
 # start rofi menu
 bindsym $mod+d exec --no-startup-id rofi -show drun
-bindsym $mod+Tab exec --no-startup-id rofi -show window
+bindsym $mod+w exec --no-startup-id rofi -show window
 bindsym $mod+Shift+d exec --no-startup-id rofi -show run
 
 # rofi custom menu
@@ -250,7 +250,7 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+bindsym $mod+t layout tabbed
 bindsym $mod+q layout toggle split
 
 # toggle tiling / floating
