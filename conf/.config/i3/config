@@ -86,10 +86,7 @@ set $WS10 "10:"
 
 # assign window to workspace
 #assign [class="URxvt"] $WS1
-for_window [class="URxvt"] focus
-
-assign [class="Atom"] $WS2
-for_window [class="Atom"] focus
+for_window [class="Alacritty"] focus
 
 assign [class="Chromium"] $WS3
 for_window [class="Chromium"] focus
@@ -98,11 +95,14 @@ for_window [class="firefox"] focus
 
 assign [class="Stardict"] $WS4
 for_window [class="Stardict"] focus
+for_window [class="Stardict"] floating enable
 assign [class="Thunar"] $WS4
 for_window [class="Thunar"] focus
+for_window [class="Thunar"] floating enable
 
 assign [class="Remmina"] $WS5
 for_window [class="Remmina"] focus
+for_window [class="Remmina"] floating enable
 assign [class="Wps"] $WS5
 for_window [class="Wps"] focus
 assign [class="Et"] $WS5
@@ -111,10 +111,6 @@ assign [class="Wpp"] $WS5
 for_window [class="Wpp"] focus
 assign [class="Wpspdf"] $WS5
 for_window [class="Wpspdf"] focus
-assign [class="VirtualBox Manager"] $WS5
-for_window [class="VirtualBox Manager"] focus
-assign [class="VirtualBoxVM"] $WS5
-for_window [class="VirtualBoxVM"] focus
 
 assign [class="Thunderbird"] $WS6
 for_window [class="Thunderbird"] focus
@@ -127,6 +123,13 @@ assign [class="Drawing"] $WS7
 for_window [class="Drawing"] focus
 assign [class="screengrab"] $WS7
 for_window [class="screengrab"] focus
+for_window [class="screengrab"] floating enable
+
+assign [class="VirtualBox Manager"] $WS9
+for_window [class="VirtualBox Manager"] focus
+for_window [class="VirtualBox Manager"] floating enable
+assign [class="VirtualBoxVM"] $WS9
+for_window [class="VirtualBoxVM"] focus
 
 #########################
 #    Applications Key   #
@@ -151,26 +154,16 @@ bindsym $mod+e exec i3-sensible-terminal -e ranger
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+  bindsym j resize shrink width 10 px or 10 ppt
+  bindsym k resize grow height 10 px or 10 ppt
+  bindsym l resize shrink height 10 px or 10 ppt
+  bindsym semicolon resize grow width 10 px or 10 ppt
+  bindsym Left resize shrink width 10 px or 10 ppt
+  bindsym Down resize grow height 10 px or 10 ppt
+  bindsym Up resize shrink height 10 px or 10 ppt
+  bindsym Right resize grow width 10 px or 10 ppt
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
 }
 bindsym $mod+i mode "resize"
 
@@ -189,20 +182,20 @@ bindsym $mod+p mode "$mode_system"
 
 # music control
 mode "music" {
-	bindsym p exec mpc toggle
-	bindsym j exec mpc next
-	bindsym k exec mpc prev
-	bindsym c exec mpc stop
-	bindsym a exec mpc repeat
-	bindsym s exec mpc single
-	bindsym r exec mpc random
-	bindsym h exec mpc volume +2
-	bindsym l exec mpc volume -2
-	bindsym i exec mpc current
-	bindsym q exec mpc queued
-	bindsym e exec mpc playlist
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+  bindsym p exec mpc toggle
+  bindsym j exec mpc next
+  bindsym k exec mpc prev
+  bindsym c exec mpc stop
+  bindsym a exec mpc repeat
+  bindsym s exec mpc single
+  bindsym r exec mpc random
+  bindsym h exec mpc volume +2
+  bindsym l exec mpc volume -2
+  bindsym i exec mpc current
+  bindsym q exec mpc queued
+  bindsym e exec mpc playlist
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
 }
 bindsym $mod+m mode "music"
 
