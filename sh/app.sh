@@ -30,6 +30,9 @@ pacman -S --noconfirm chromium pepper-flash firefox firefox-i18n-zh-cn flashplug
 # Multimedia
 pacman -S --noconfirm drawing gcolor2 mpd mpc ncmpcpp mpv screengrab
 
+# Dictionary
+pacman -S --noconfirm stardict
+
 # GRUB
 sed -i 's:#GRUB_BACKGROUND="/path/to/wallpaper":GRUB_BACKGROUND="/usr/share/backgrounds/archlinux/archlinux-simplyblack.png":' /etc/default/grub
 grub-mkconfig -o /boot/grub/grub.cfg
