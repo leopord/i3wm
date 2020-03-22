@@ -13,6 +13,7 @@ pacman -S --noconfirm xorg-server xorg-xinit slim i3 polybar zsh archlinux-wallp
 # Development
 pacman -S --noconfirm ctags fzf git xsel neovim python-pynvim nodejs the_silver_searcher bat fzf clang
 npm install -g neovim
+pacman -S --noconfirm mariadb php php-fpm apache
 
 # Input Method
 pacman -S --noconfirm fcitx fcitx-gtk3 fcitx-configtool
@@ -54,5 +55,20 @@ systemctl enable NetworkManager.service
 # Set default audio card
 cp -f ./conf/asound.conf /etc/
 
+# Set apache http server configuration
+cp -f ./conf/httpd.conf /etc/httpd/conf/
+cp -f ./conf/httpd-userdir.conf /etc/httpd/conf/extra/
+cp -f ./conf/php-fpm.conf /etc/httpd/conf/extra/
+
+# Grant http to access /home/leopord
+setfacl -m "u:http:--x" /home/leopord
+
+# Config php
+cp -f ./conf/php.ini /etc/php/
+
 # Extract dictionary file
 tar xvf ./dictionary/Longman_Dictionary_of_Contemporary_English-2.4.2.tar.bz2 -C /usr/share/stardict/dic/
+
+# Initialize mariadb
+mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+mysql_secure_installation
