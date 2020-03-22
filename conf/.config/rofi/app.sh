@@ -1,9 +1,12 @@
 #!/bin/bash
 web1="firefox(web browser)"
 web2="chromium(web browser)"
+qq="qq"
+wechat="wechat"
 file="file manager"
 text="nvim(text editor)"
 download="xdman(downloader)"
+netdisk="baiduNetDisk"
 writer="wps writer"
 sheet="wps spreadsheets"
 presentation="wps presentation"
@@ -21,7 +24,7 @@ process="process viewer"
 windows="windows"
 virtual="virtualbox"
 other="more rofi"
-action=$(echo "$web1|$web2|$music1|$music2|$file|$text|$download|$writer|$sheet|$presentation|$pdf|$windows|$virtual|$dict|$email|$image|$remote|$color|$screen|$monitor|$process|$other" | rofi -sep "|" -dmenu -p "run")
+action=$(echo "$web1|$web2|$qq|$wechat|$music1|$music2|$file|$text|$download|$netdisk|$writer|$sheet|$presentation|$pdf|$dict|$email|$image|$remote|$color|$screen|$monitor|$process|$other" | rofi -sep "|" -dmenu -p "run")
 
 case "$action" in
   "$web1")
@@ -29,6 +32,12 @@ case "$action" in
     ;;
   "$web2")
     chromium --enable-easy-off-store-extension-install
+    ;;
+  "$qq")
+    /opt/deepinwine/apps/Deepin-QQ/run.sh
+    ;;
+  "$wechat")
+    /opt/deepinwine/apps/Deepin-WeChat/run.sh
     ;;
   "$music1")
     i3-sensible-terminal -e ncmpcpp
@@ -44,6 +53,9 @@ case "$action" in
     ;;
   "$download")
     xdman
+    ;;
+  "$netdisk")
+    baidunetdisk
     ;;
   "$writer")
     wps
@@ -65,9 +77,6 @@ case "$action" in
     ;;
   "$dict")
     stardict
-    ;;
-  "$email")
-    thunderbird
     ;;
   "$image")
     drawing

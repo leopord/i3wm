@@ -1,12 +1,14 @@
 #!/bin/bash
-# Sync old packages
-pacman -Syu --noconfirm
+# Add archlinuxcn
+cp -f ./conf/pacman.conf /etc/
+cp -f ./conf/archlinuxcn /etc/pacman.d/
+pacman -Sy --noconfirm archlinuxcn-keyring
 
 # Basic Packages
 pacman -S --noconfirm zip unzip unrar unace p7zip hwinfo htop arch-wiki-lite arch-wiki-docs
 
 # Window Manager
-pacman -S --noconfirm xorg-server xorg-xinit slim i3 zsh archlinux-wallpaper archlinux-themes-slim alacritty rofi feh scrot alsa-utils volumeicon arandr
+pacman -S --noconfirm xorg-server xorg-xinit slim i3 polybar zsh archlinux-wallpaper archlinux-themes-slim alacritty rofi feh scrot alsa-utils volumeicon arandr
 
 # Development
 pacman -S --noconfirm ctags fzf git xsel neovim python-pynvim nodejs the_silver_searcher bat fzf clang
@@ -30,8 +32,11 @@ pacman -S --noconfirm chromium pepper-flash firefox firefox-i18n-zh-cn flashplug
 # Multimedia
 pacman -S --noconfirm drawing gcolor2 mpd mpc ncmpcpp mpv screengrab
 
-# Dictionary
-pacman -S --noconfirm stardict
+# Documents & Dictionary
+pacman -S --noconfirm wps-office ttf-wps-fonts stardict
+
+# Others
+pacman -S --noconfirm netease-cloud-music baidunetdisk-bin
 
 # GRUB
 sed -i 's:#GRUB_BACKGROUND="/path/to/wallpaper":GRUB_BACKGROUND="/usr/share/backgrounds/archlinux/archlinux-simplyblack.png":' /etc/default/grub

@@ -119,17 +119,23 @@ assign [class="mpv"] $WS7
 for_window [class="mpv"] focus
 assign [class="netease-cloud-music"] $WS7
 for_window [class="netease-cloud-music"] focus
-assign [class="Drawing"] $WS7
+
+assign [class="Wine"] $WS8
+for_window [class="Wine"] focus
+for_window [class="Wine"] floating enable
+
+assign [class="baidunetdisk"] $WS9
+for_window [class="baidunetdisk"] focus
+for_window [class="baidunetdisk"] floating enable
+assign [class="java-lang-Thread"] $WS9
+for_window [class="java-lang-Thread"] focus
+for_window [class="java-lang-Thread"] floating enable
+
+assign [class="Drawing"] $WS10
 for_window [class="Drawing"] focus
-assign [class="screengrab"] $WS7
+assign [class="screengrab"] $WS10
 for_window [class="screengrab"] focus
 for_window [class="screengrab"] floating enable
-
-assign [class="VirtualBox Manager"] $WS9
-for_window [class="VirtualBox Manager"] focus
-for_window [class="VirtualBox Manager"] floating enable
-assign [class="VirtualBoxVM"] $WS9
-for_window [class="VirtualBoxVM"] focus
 
 #########################
 #    Applications Key   #
