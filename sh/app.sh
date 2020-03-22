@@ -1,4 +1,9 @@
 #!/bin/bash
+
+# Add user
+useradd -m -g users -G audio,video,floppy,network,rfkill,scanner,storage,optical,power,wheel,uucp,http,ftp -s /bin/bash leopord
+sed -i "s/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/" /etc/sudoers
+
 # Add archlinuxcn
 cp -f ./conf/pacman.conf /etc/
 cp -f ./conf/archlinuxcn /etc/pacman.d/
@@ -55,16 +60,17 @@ systemctl enable NetworkManager.service
 # Set default audio card
 cp -f ./conf/asound.conf /etc/
 
-# Set apache http server configuration
+# Set apache http server
 cp -f ./conf/httpd.conf /etc/httpd/conf/
-cp -f ./conf/httpd-userdir.conf /etc/httpd/conf/extra/
 cp -f ./conf/php-fpm.conf /etc/httpd/conf/extra/
+ln -s /home/leopord/Projects/web /srv/web
 
-# Grant http to access /home/leopord
+# Set http acl
 setfacl -m "u:http:--x" /home/leopord
 
 # Config php
 cp -f ./conf/php.ini /etc/php/
+cp -f ./conf/www.conf /etc/php/php-fpm.d/
 
 # Extract dictionary file
 tar xvf ./dictionary/Longman_Dictionary_of_Contemporary_English-2.4.2.tar.bz2 -C /usr/share/stardict/dic/
