@@ -99,6 +99,9 @@ for_window [class="Stardict"] floating enable
 assign [class="Thunar"] $WS4
 for_window [class="Thunar"] focus
 for_window [class="Thunar"] floating enable
+assign [class="File-roller"] $WS4
+for_window [class="File-roller"] focus
+for_window [class="File-roller"] floating enable
 
 assign [class="Remmina"] $WS5
 for_window [class="Remmina"] focus

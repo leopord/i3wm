@@ -24,7 +24,7 @@ process="process viewer"
 windows="windows"
 virtual="virtualbox"
 other="more rofi"
-action=$(echo "$web1|$web2|$qq|$wechat|$music1|$music2|$file|$text|$download|$netdisk|$writer|$sheet|$presentation|$pdf|$dict|$email|$image|$remote|$color|$screen|$monitor|$process|$other" | rofi -sep "|" -dmenu -p "run")
+action=$(echo "$web1|$web2|$qq|$wechat|$music1|$music2|$file|$text|$download|$netdisk|$writer|$sheet|$presentation|$pdf|$dict|$image|$remote|$color|$screen|$monitor|$process|$other" | rofi -sep "|" -dmenu -p "run")
 
 case "$action" in
   "$web1")
