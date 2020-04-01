@@ -10,7 +10,7 @@ cp -f ./conf/archlinuxcn /etc/pacman.d/
 pacman -Sy --noconfirm archlinuxcn-keyring
 
 # Basic Packages
-pacman -S --noconfirm zip unzip unrar unace p7zip hwinfo htop arch-wiki-lite arch-wiki-docs
+pacman -S --noconfirm zip unzip unrar unace p7zip hwinfo htop arch-wiki-lite arch-wiki-docs man-db
 
 # Window Manager
 pacman -S --noconfirm xorg-server xorg-xinit slim i3 polybar zsh archlinux-wallpaper archlinux-themes-slim alacritty rofi feh scrot alsa-utils volumeicon arandr
