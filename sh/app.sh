@@ -30,7 +30,7 @@ pacman -S --noconfirm ttf-font-awesome wqy-zenhei wqy-microhei adobe-source-han-
 pacman -S --noconfirm networkmanager network-manager-applet rp-pppoe
 
 # File Manager
-pacman -S --noconfirm ranger w3m thunar thunar-archive-plugin thunar-volman file-roller gvfs gvfs-afc gvfs-gphoto2 gvfs-mtp usbmuxd libimobiledevice
+pacman -S --noconfirm ranger w3m thunar thunar-archive-plugin thunar-volman file-roller gvfs gvfs-afc gvfs-gphoto2 gvfs-mtp usbmuxd libimobiledevice ntfs-3g ifuse
 
 # Internet
 pacman -S --noconfirm chromium pepper-flash firefox firefox-i18n-zh-cn flashplugin wget remmina freerdp you-get
@@ -56,6 +56,9 @@ systemctl enable slim.service
 
 # Network Manager
 systemctl enable NetworkManager.service
+
+# iOS
+systemctl enable usbmuxd.service
 
 # Set default audio card
 cp -f ./conf/asound.conf /etc/
