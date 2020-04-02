@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Add user
-useradd -m -g users -G audio,video,floppy,network,rfkill,scanner,storage,optical,power,wheel,uucp,http,ftp -s /bin/bash leopord
+useradd -m -g users -G audio,video,floppy,network,rfkill,scanner,storage,optical,power,wheel,uucp,usbmux,http,ftp -s /bin/bash leopord
 sed -i "s/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/" /etc/sudoers
 
 # Add archlinuxcn
@@ -30,7 +30,7 @@ pacman -S --noconfirm ttf-font-awesome wqy-zenhei wqy-microhei adobe-source-han-
 pacman -S --noconfirm networkmanager network-manager-applet rp-pppoe
 
 # File Manager
-pacman -S --noconfirm ranger w3m thunar thunar-archive-plugin thunar-volman file-roller gvfs gvfs-afc gvfs-gphoto2 gvfs-mtp usbmuxd libimobiledevice ntfs-3g ifuse
+pacman -S --noconfirm ranger w3m thunar thunar-archive-plugin thunar-volman file-roller gvfs gvfs-afc gvfs-gphoto2 gvfs-mtp usbmuxd libimobiledevice ntfs-3g ifuse mediainfo atool
 
 # Internet
 pacman -S --noconfirm chromium pepper-flash firefox firefox-i18n-zh-cn flashplugin wget remmina freerdp you-get

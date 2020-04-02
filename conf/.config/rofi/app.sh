@@ -10,7 +10,7 @@ netdisk="baiduNetDisk"
 writer="wps writer"
 sheet="wps spreadsheets"
 presentation="wps presentation"
-pdf="wps pdf"
+pdf="pdf(foxit reader)"
 music1="ncmpcpp music player"
 music2="netease cloud music player"
 dict="stardict(dictionary)"
@@ -67,7 +67,7 @@ case "$action" in
     wpp
     ;;
   "$pdf")
-    wpspdf
+    foxitreader
     ;;
   "$windows")
     /usr/lib/virtualbox/VirtualBoxVM --comment "Win7" --startvm "{6b7a84ed-f07d-4f64-b337-0c6fac930109}"

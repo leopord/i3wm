@@ -112,8 +112,6 @@ assign [class="Et"] $WS5
 for_window [class="Et"] focus
 assign [class="Wpp"] $WS5
 for_window [class="Wpp"] focus
-assign [class="Wpspdf"] $WS5
-for_window [class="Wpspdf"] focus
 
 assign [class="Thunderbird"] $WS6
 for_window [class="Thunderbird"] focus
@@ -139,6 +137,8 @@ for_window [class="Drawing"] focus
 assign [class="screengrab"] $WS10
 for_window [class="screengrab"] focus
 for_window [class="screengrab"] floating enable
+assign [class="Foxit Reader"] $WS10
+for_window [class="Foxit Reader"] focus
 
 #########################
 #    Applications Key   #
