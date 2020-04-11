@@ -39,7 +39,7 @@ pacman -S --noconfirm chromium pepper-flash firefox firefox-i18n-zh-cn flashplug
 pacman -S --noconfirm drawing gcolor2 mpd mpc ncmpcpp mpv screengrab
 
 # Documents & Dictionary
-pacman -S --noconfirm wps-office ttf-wps-fonts stardict
+pacman -S --noconfirm wps-office ttf-wps-fonts stardict foxitreader
 
 # Others
 pacman -S --noconfirm netease-cloud-music baidunetdisk-bin

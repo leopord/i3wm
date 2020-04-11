@@ -1,5 +1,5 @@
 #!/bin/bash
 pushd $(dirname $0)
-sudo ./sh/app.sh
-./sh/config.sh
+./sh/app.sh
+su leopord -c "./sh/config.sh"
 popd

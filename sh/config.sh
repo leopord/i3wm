@@ -9,28 +9,36 @@ if [ ! -d ~/.logs/mpd]; then
   mkdir -p ~/.logs/mpd
 fi
 
-if [ ! -d ~/Screenshots ]; then
-  mkdir -p ~/Screenshots
+if [ ! -d ~/screenshots ]; then
+  mkdir -p ~/screenshots
 fi
 
-if [ ! -d ~/Softwares ]; then
-  mkdir -p ~/Softwares
+if [ ! -d ~/softwares ]; then
+  mkdir -p ~/softwares
 fi
 
-if [ ! -d ~/Documents ]; then
-  mkdir -p ~/Documents
+if [ ! -d ~/projects ]; then
+  mkdir -p ~/projects
 fi
 
-if [ ! -d ~/Downloads ]; then
-  mkdir -p ~/Downloads 
+if [ ! -d ~/records ]; then
+  mkdir -p ~/records
 fi
 
-if [ ! -d ~/Video ]; then
-  mkdir -p ~/Video 
+if [ ! -d ~/documents ]; then
+  mkdir -p ~/documents
 fi
 
-if [ ! -d ~/Music ]; then
-  mkdir -p ~/Music
+if [ ! -d ~/downloads ]; then
+  mkdir -p ~/downloads
+fi
+
+if [ ! -d ~/video ]; then
+  mkdir -p ~/video
+fi
+
+if [ ! -d ~/audio ]; then
+  mkdir -p ~/audio
 fi
 
 # Autostart mpd with systemd

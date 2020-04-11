@@ -127,7 +127,7 @@ for_window [class="Wine"] floating enable
 
 assign [class="baidunetdisk"] $WS9
 for_window [class="baidunetdisk"] focus
-for_window [class="baidunetdisk"] floating enable
+#for_window [class="baidunetdisk"] floating enable
 assign [class="java-lang-Thread"] $WS9
 for_window [class="java-lang-Thread"] focus
 for_window [class="java-lang-Thread"] floating enable
