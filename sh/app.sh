@@ -33,13 +33,16 @@ pacman -S --noconfirm networkmanager network-manager-applet rp-pppoe
 pacman -S --noconfirm ranger w3m thunar thunar-archive-plugin thunar-volman file-roller gvfs gvfs-afc gvfs-gphoto2 gvfs-mtp usbmuxd libimobiledevice ntfs-3g ifuse mediainfo atool
 
 # Internet
-pacman -S --noconfirm chromium pepper-flash firefox firefox-i18n-zh-cn flashplugin wget remmina freerdp you-get
+pacman -S --noconfirm chromium pepper-flash wget remmina freerdp you-get
 
 # Multimedia
 pacman -S --noconfirm drawing gcolor2 mpd mpc ncmpcpp mpv screengrab
 
 # Documents & Dictionary
 pacman -S --noconfirm wps-office ttf-wps-fonts stardict foxitreader
+
+# Printer
+pacman -S --noconfirm cups system-config-printer
 
 # Others
 pacman -S --noconfirm netease-cloud-music baidunetdisk-bin

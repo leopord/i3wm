@@ -1,6 +1,5 @@
 #!/bin/bash
-web1="firefox(web browser)"
-web2="chromium(web browser)"
+web="chromium(web browser)"
 qq="qq"
 wechat="wechat"
 file="file manager"
@@ -21,16 +20,14 @@ color="gcolor2(color picker)"
 screen="screen capture"
 monitor="monitor manager"
 process="process viewer"
+printer="printer manager"
 windows="windows"
 virtual="virtualbox"
 other="more rofi"
-action=$(echo "$web1|$web2|$qq|$wechat|$music1|$music2|$file|$text|$download|$netdisk|$writer|$sheet|$presentation|$pdf|$dict|$image|$remote|$color|$screen|$monitor|$process|$other" | rofi -sep "|" -dmenu -p "run")
+action=$(echo "$web|$qq|$wechat|$music1|$music2|$file|$text|$download|$netdisk|$writer|$sheet|$presentation|$pdf|$dict|$image|$remote|$color|$screen|$monitor|$printer|$process|$other" | rofi -sep "|" -dmenu -p "run")
 
 case "$action" in
-  "$web1")
-    firefox
-    ;;
-  "$web2")
+  "$web")
     chromium --enable-easy-off-store-extension-install
     ;;
   "$qq")
@@ -95,6 +92,9 @@ case "$action" in
     ;;
   "$monitor")
     arandr
+    ;;
+  "$printer")
+    system-config-printer
     ;;
   "$other")
     rofi -show drun
