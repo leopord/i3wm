@@ -17,7 +17,8 @@ exec --no-startup-id volumeicon
 exec --no-startup-id nm-applet
 exec --no-startup-id mate-power-manager
 exec --no-startup-id fcitx
-#exec --no-startup-id i3-sensible-terminal
+exec_always --no-startup-id xautolock -time 5 -locker "slimlock"
+#exec --no-startup-id alacritty
 #########################
 #      Window Style     #
 #########################
@@ -73,20 +74,25 @@ set $WS9 "9:"
 set $WS10 "10:"
 
 # assign workspace to screens
-#workspace $WS1 output VGA-1
-#workspace $WS2 output VGA-1
-#workspace $WS3 output VGA-1
-#workspace $WS4 output VGA-1
-#workspace $WS5 output VGA-1
-#workspace $WS6 output VGA-1
-#workspace $WS7 output VGA-1
-#workspace $WS8 output VGA-1
-#workspace $WS9 output VGA-1
-#workspace $WS10 output VGA-1
+workspace $WS1 output HDMI-1
+workspace $WS2 output HDMI-1
+workspace $WS3 output DP-2
+workspace $WS4 output HDMI-1
+workspace $WS5 output HDMI-1
+workspace $WS6 output HDMI-1
+workspace $WS7 output DP-2
+workspace $WS8 output DP-2
+workspace $WS9 output HDMI-1
+workspace $WS10 output DP-2
 
 # assign window to workspace
-#assign [class="URxvt"] $WS1
+assign [class="Alacritty"] $WS1
 for_window [class="Alacritty"] focus
+
+assign [class="Postman"] $WS2
+for_window [class="Postman"] focus
+assign [class="st-256color"] $WS2
+for_window [class="st-256color"] focus
 
 assign [class="Chromium"] $WS3
 for_window [class="Chromium"] focus
@@ -112,6 +118,12 @@ assign [class="Et"] $WS5
 for_window [class="Et"] focus
 assign [class="Wpp"] $WS5
 for_window [class="Wpp"] focus
+assign [class="VirtualBox Manager"] $WS5
+for_window [class="VirtualBox Manager"] focus
+assign [class="VirtualBoxVM"] $WS5
+for_window [class="VirtualBoxVM"] focus
+assign [class="VirtualBox Machine"] $WS5
+for_window [class="VirtualBox Machine"] focus
 
 assign [class="Thunderbird"] $WS6
 for_window [class="Thunderbird"] focus
@@ -124,6 +136,18 @@ for_window [class="netease-cloud-music"] focus
 assign [class="Wine"] $WS8
 for_window [class="Wine"] focus
 for_window [class="Wine"] floating enable
+assign [class="wechat.exe"] $WS8
+for_window [class="wechat.exe"] focus
+for_window [class="wechat.exe"] floating enable
+assign [class="qq.exe"] $WS8
+for_window [class="qq.exe"] focus
+for_window [class="qq.exe"] floating enable
+assign [class="tim.exe"] $WS8
+for_window [class="tim.exe"] focus
+for_window [class="tim.exe"] floating enable
+assign [class="Qq"] $WS8
+for_window [class="Qq"] focus
+for_window [class="Qq"] floating enable
 
 assign [class="baidunetdisk"] $WS9
 for_window [class="baidunetdisk"] focus
@@ -144,7 +168,7 @@ for_window [class="Foxit Reader"] focus
 #    Applications Key   #
 #########################
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty
 
 # start rofi menu
 bindsym $mod+d exec --no-startup-id rofi -show drun
@@ -159,7 +183,7 @@ bindsym Print exec scrot -e 'mv $f ~/Screenshots'
 bindsym --release $mod+Print exec scrot -s -e 'mv $f ~/Screenshots'
 
 # start firefox
-bindsym $mod+e exec i3-sensible-terminal -e ranger
+bindsym $mod+e exec alacritty -e ranger
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -179,11 +203,10 @@ bindsym $mod+i mode "resize"
 # power management
 set $mode_system Power Management (l)ock, l(o)gout, (s)hutdown, (r)eboot
 mode "$mode_system" {
-	bindsym l exec slimlock, mode "default"
-	bindsym o exec i3-msg exit, mode "default"
-	bindsym s exec systemctl poweroff
-	bindsym r exec systemctl reboot
-	bindsym u exec mpc update --wait
+	bindsym l exec --no-startup-id slimlock, mode "default"
+	bindsym o exec --no-startup-id i3-msg exit, mode "default"
+	bindsym s exec --no-startup-id systemctl poweroff, mode "default"
+	bindsym r exec systemctl reboot, mode "default"
 	bindsym Escape mode "default"
 	bindsym Return mode "default"
 }
@@ -203,6 +226,7 @@ mode "music" {
   bindsym i exec mpc current
   bindsym q exec mpc queued
   bindsym e exec mpc playlist
+	bindsym u exec mpc update --wait
   bindsym Return mode "default"
   bindsym Escape mode "default"
 }

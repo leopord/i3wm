@@ -13,7 +13,7 @@ pacman -Sy --noconfirm archlinuxcn-keyring
 pacman -S --noconfirm zip unzip unrar unace p7zip hwinfo htop arch-wiki-lite arch-wiki-docs man-db
 
 # Window Manager
-pacman -S --noconfirm xorg-server xorg-xinit slim i3-gaps polybar zsh archlinux-wallpaper archlinux-themes-slim alacritty rofi feh scrot alsa-utils volumeicon arandr
+pacman -S --noconfirm xorg-server xorg-xinit slim i3-gaps polybar zsh archlinux-wallpaper archlinux-themes-slim alacritty rofi feh scrot alsa-utils volumeicon arandr xautolock
 
 # Development
 pacman -S --noconfirm ctags fzf git xsel neovim python-pynvim nodejs the_silver_searcher bat fzf clang
