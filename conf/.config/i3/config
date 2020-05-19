@@ -17,7 +17,6 @@ exec --no-startup-id volumeicon
 exec --no-startup-id nm-applet
 exec --no-startup-id mate-power-manager
 exec --no-startup-id fcitx
-exec_always --no-startup-id xautolock -time 10 -locker "slimlock"
 #exec --no-startup-id alacritty
 
 ########################
