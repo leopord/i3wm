@@ -17,8 +17,31 @@ exec --no-startup-id volumeicon
 exec --no-startup-id nm-applet
 exec --no-startup-id mate-power-manager
 exec --no-startup-id fcitx
-exec_always --no-startup-id xautolock -time 5 -locker "slimlock"
+exec_always --no-startup-id xautolock -time 10 -locker "slimlock"
 #exec --no-startup-id alacritty
+
+########################
+#         i3bar        #
+########################
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+# bar {
+#   strip_workspace_numbers yes
+#   tray_output primary
+#   tray_padding 5
+#   status_command conky -c ~/.config/conky/conky.bar.conf
+#   position top
+#   font pango:noto mono 12
+#   binding_mode_indicator no
+#   colors {
+#     background #222222
+#     statusline #FFFFFF
+#     focused_workspace #aaaaaa #555555 #FFFFFF
+#     active_workspace #555555 #00000 #FFFFFF
+#     inactive_workspace #555555 #000000 #FFFFFF
+#   }
+# }
+
 #########################
 #      Window Style     #
 #########################
@@ -112,12 +135,6 @@ for_window [class="File-roller"] floating enable
 assign [class="Remmina"] $WS5
 for_window [class="Remmina"] focus
 for_window [class="Remmina"] floating enable
-assign [class="Wps"] $WS5
-for_window [class="Wps"] focus
-assign [class="Et"] $WS5
-for_window [class="Et"] focus
-assign [class="Wpp"] $WS5
-for_window [class="Wpp"] focus
 assign [class="VirtualBox Manager"] $WS5
 for_window [class="VirtualBox Manager"] focus
 assign [class="VirtualBoxVM"] $WS5
@@ -127,6 +144,14 @@ for_window [class="VirtualBox Machine"] focus
 
 assign [class="Thunderbird"] $WS6
 for_window [class="Thunderbird"] focus
+assign [class="Foxit Reader"] $WS6
+for_window [class="Foxit Reader"] focus
+assign [class="Wps"] $WS6
+for_window [class="Wps"] focus
+assign [class="Et"] $WS6
+for_window [class="Et"] focus
+assign [class="Wpp"] $WS6
+for_window [class="Wpp"] focus
 
 assign [class="mpv"] $WS7
 for_window [class="mpv"] focus
@@ -161,8 +186,6 @@ for_window [class="Drawing"] focus
 assign [class="screengrab"] $WS10
 for_window [class="screengrab"] focus
 for_window [class="screengrab"] floating enable
-assign [class="Foxit Reader"] $WS10
-for_window [class="Foxit Reader"] focus
 
 #########################
 #    Applications Key   #
@@ -322,5 +345,5 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 # bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-gaps inner 5
-gaps outer 5
+gaps inner 3
+gaps outer 3
