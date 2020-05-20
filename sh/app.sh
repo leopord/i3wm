@@ -69,7 +69,8 @@ cp -f ./conf/asound.conf /etc/
 # Set apache http server
 cp -f ./conf/httpd.conf /etc/httpd/conf/
 cp -f ./conf/php-fpm.conf /etc/httpd/conf/extra/
-ln -s /home/leopord/Projects/web /srv/web
+ln -s /home/leopord/projects/web /srv/web
+chown leopord:users /run/php-fpm/php-fpm.sock
 
 # Set http acl
 setfacl -m "u:http:--x" /home/leopord
